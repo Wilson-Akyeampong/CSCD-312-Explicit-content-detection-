@@ -1,0 +1,128 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AI Project</title>
+
+    <link>
+    <link href="https://fonts.googleapis.com/css?family=Shanti" rel="stylesheet">
+    <link href="//maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+    <script src="//maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+<!------ Include the above in your HEAD tag ---------->
+
+    <style>
+        body{
+    
+            font-family: 'Shanti', sans-serif;
+        }
+        
+        #wrapper{
+            
+            width: 100%;
+            min-height: 50vh;
+            background: rgb(2,0,36);
+            background: linear-gradient(222deg, rgba(2,0,36,1) 0%, rgba(9,9,121,0.785049053801208) 35%, rgba(0,212,255,1) 100%);
+        }
+        
+        #product{
+            
+            min-height: 70vh;
+            background: rgb(2,0,36);
+            background: linear-gradient(222deg, rgba(2,0,36,1) 0%, rgba(9,9,121,0.25003504819896705) 35%, rgba(0,212,255,1) 100%);
+            color: white;
+            padding: 15%;
+        }
+        
+        #textone{
+            padding-top: 20%;
+        }
+        
+        #footer{
+            background: rgb(238,174,202);
+            background: radial-gradient(circle, rgba(238,174,202,1) 0%, rgba(148,187,233,0.02594541234462533) 100%);color: white;
+        }
+        
+        
+
+    </style>
+</head>
+<body>
+
+        
+
+<div id="wrapper">
+    
+    
+    <div class="container">
+        
+        
+       <nav class="navbar navbar-expand-lg navbar-dark" id="menu">
+  <a class="navbar-brand" href="#">DEEP LEARNING</a>
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+  <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+    <div class="navbar-nav">
+      <a class="nav-item nav-link " href="#">Home <span class="sr-only">(current)</span></a>
+      <a class="nav-item nav-link" href="#">About</a>
+      <a class="nav-item nav-link" href="#">Blog</a>
+      <a class="nav-item nav-link " href="#">Contact</a>
+    </div>
+  </div>
+</nav>
+
+<hr>
+<div>
+<div class="jumbotron" id="product">
+    <div class="row">
+        
+        <div class="col-md-6" id="tekstone"><h2>Explicit Content Detection</h2><hr>
+        <p>Welcome to deep learning. This is an artificial intelligence designed to classify images on the degree of safeness or explicitness. Kindly click on the browse button to load image to detect if it is explicit or safe to work with </p>
+        <button type="button" class="btn btn-outline-secondary">Read more</button></div>
+       <div class="col-md-6 d-flex justify-content-center align-items-center">
+        <form action="" enctype="multipart/form-data" method="POST">
+            {% csrf_token %}
+            <input type="file" id="image_name" name="image_name" required >
+            <input type="submit" value="Submit" class="btn btn-outline-secondary">
+            
+                {% if label %}
+                <img src="{% static url %}" height="320px" width="400px"/>
+                <div>
+                    Percentage accuracy is {{accuracy}}%
+                    <br>
+                    This image is {{label}}
+                </div>
+                {% endif %}
+
+        </form>
+         </div>
+    </div> 
+    <br>
+    
+    </div>
+</div>
+    </div>
+    
+    
+        <footer>
+            <div class="container">
+             <div class="jumbotron" id="footer">
+                    <p>&copy Akyeampong Wilson Ntim </
+             </div>
+            </div>
+         </footer>
+</div>
+
+
+
+</body>
+</html>
+
+
+
+
+
